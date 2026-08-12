@@ -1,0 +1,123 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/29/2026 7:14:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MARWA"
+  DTS:CreatorName="MARWA\marwa"
+  DTS:DTSID="{BB836187-5F53-4B7D-B3A6-94D1D2728982}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{FF13AC44-DB04-4857-A65D-0E51CC0D2C2D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de package_Exel_Ods"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tâche d'exécution de package"
+      DTS:DTSID="{BCAC5A75-E828-4FAA-BB56-586E39B506D4}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de package_Exel_Ods"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>PKG_Excel_To_ODS.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de package_ODS_DW"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tâche d'exécution de package"
+      DTS:DTSID="{E394D9DF-1D16-4350-838A-F73A0AD948EC}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de package_ODS_DW"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>PKG_ODS_To_DW.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{B5213EC8-46C0-4C92-8A9F-5A62B31FFA6A}"
+      DTS:From="Package\Tâche d'exécution de package_Exel_Ods"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Tâche d'exécution de package_ODS_DW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Tâche d'exécution de package_Exel_Ods"
+          TopLeft="206.666655374898,109.199999240637" />
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\Tâche d'exécution de package_ODS_DW"
+          TopLeft="227.499987569949,214.933331838714" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="341.466655374898,150.799999240637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.2333321950503,64.1333325980769"
+              Start="0,0"
+              End="21.2333321950503,56.6333325980769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0666662990384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0666662990384"
+                    Point2="0,32.0666662990384"
+                    Point3="4,32.0666662990384" />
+                  <mssgle:LineSegment
+                    End="17.2333321950503,32.0666662990384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.2333321950503,32.0666662990384"
+                    Point2="21.2333321950503,32.0666662990384"
+                    Point3="21.2333321950503,36.0666662990384" />
+                  <mssgle:LineSegment
+                    End="21.2333321950503,56.6333325980769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
